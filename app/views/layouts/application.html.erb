@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AwesomeAnswers</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%# link_to is a Rails helper method that enables us to generate <a> tags root_path
+    is a Rails URL/PATH helper that envables us to generate a route that we defined in the routes.rb %>
+    <%= link_to "Home", root_path %> |
+    <%= link_to "About", about_path %> |
+    <%= link_to "Hello", hello_person_path(name: "Eric") %> |
+    <%= link_to "contact", contact_path %> |
+    <%= link_to "subscribe", subscribe_path %> | 
+
+<%= yield %>
+
+</body>
+</html>
