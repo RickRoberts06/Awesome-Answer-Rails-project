@@ -43,6 +43,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #so when deploying to production, e. g. Heroku. Those gems in this group
 #won't be installed by default.
 group :development, :test do
+
+  gem "interactive_editor"
+  gem "awesome_print"
+  gem "hirb"
+  gem "faker"
+  # will keep the command terminal quiet when usually print down the "assets"
+  gem "quiet_assets"
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
