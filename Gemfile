@@ -9,7 +9,7 @@ gem 'pg'
 #any time you want to add a gem, add a line in this file for the gem then
 #run: bundle install from the terminal
 # gem "haml-rails"
-
+gem 'kaminari'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

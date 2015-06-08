@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   #VERB "URL" => "CONTROLLER_NAME#ACTION"
   get "/hello" => "welcome#hello"
 
+  # verb "/path/:id" => "controller#action"
 
 #this will match any url that has /hello/ANYTHING to WelcomeController
 #hello action. Rails will also add a key value to the params Hash from
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   #This makes it that when we visit the home page of our application. It willl
   #invoke the welcome_controller with index action (method) inside it
   #notice the class name is WelcomeController but I only had to put welcome
-  #in here as "controller" part is implied
 
   root "welcome#index"
 
@@ -27,6 +27,22 @@ Rails.application.routes.draw do
 
   post "/subscribe" => "subscribe#create"
 
+#-----------------------------------------------
+
+  get "/questions/new" => "questions#new", as: :new_question
+
+  post "/questions" => "questions#create", as: :questions
+  #-------------------------------------------------
+  #
+  get "/questions/:id" => "questions#show", as: :question
+
+  get "/questions" => "questions#index"
+
+  get "/questions/:id/edit" => "questions#edit", as: :edit_question
+
+  patch  "/questions/:id"   => "questions#update"
+
+  delete "/questions/:id"   => "questions#destroy"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
